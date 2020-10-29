@@ -10,9 +10,9 @@ import mx.com.randyfull8.fragmentos.core.FragmentosApplication;
 import mx.com.randyfull8.fragmentos.gui.components.NavigationHost;
 
 public class MainActivity extends AppCompatActivity implements NavigationHost{
-//
-    public static HashMap<String, Object> GLOBALS= new HashMap<>();
 
+    public static HashMap<String, Object> GLOBALS= new HashMap<>();
+//
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
