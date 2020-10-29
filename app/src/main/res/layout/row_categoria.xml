@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="215dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    app:cardCornerRadius="10dp"
+    android:elevation="5dp"
+    app:cardElevation="5dp"
+    android:layout_margin="20dp"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgCategoria"
+            android:layout_width="200dp"
+            android:layout_height="170dp"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="5dp"
+            android:scaleType="centerCrop" />
+
+        <TextView
+            android:id="@+id/txtNombrecategoria"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="22dp"
+            android:layout_marginBottom="22dp"
+            android:layout_toRightOf="@id/imgCategoria"
+            android:gravity="center"
+            android:layout_marginLeft="8dp"
+            android:text="Nombre Categoria"
+            android:textAppearance="?attr/textAppearanceHeadline5" />
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>
