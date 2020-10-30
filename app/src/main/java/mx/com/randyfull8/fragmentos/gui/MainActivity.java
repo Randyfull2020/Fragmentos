@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity implements NavigationHost{
                 .add(R.id.contentPanel,new Categorias())
                 .commit();
     }
-
+//
     public void nuevotop(View view){
         getSupportFragmentManager()
                 .beginTransaction()
