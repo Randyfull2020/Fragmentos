@@ -12,7 +12,7 @@ import mx.com.randyfull8.fragmentos.gui.components.NavigationHost;
 public class MainActivity extends AppCompatActivity implements NavigationHost{
 
     public static HashMap<String, Object> GLOBALS= new HashMap<>();
-//
+//hola
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,6 +71,13 @@ public class MainActivity extends AppCompatActivity implements NavigationHost{
         getSupportFragmentManager()
                 .beginTransaction()
                 .add(R.id.contentPanel,new ViejaEscuela())
+                .commit();
+    }
+    public void nuevoadministrars(View view){
+
+        getSupportFragmentManager()
+                .beginTransaction()
+                .add(R.id.contentPanel,new MisJuegos())
                 .commit();
     }
     public void nuevofree(View view){
