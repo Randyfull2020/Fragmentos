@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -45,6 +46,7 @@ private static final String PATH_TOP="topJuegos";
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
     }
+    //u
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
         configGlobals();
@@ -108,7 +110,12 @@ private static final String PATH_TOP="topJuegos";
             public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
 
                 Juego juego = snapshot.getValue(Juego.class);
-                juegos.set(juego.getIdJuego(),juego);
+                if (juego!=null){
+
+                    Log.i("juego","onChildChanced"+juego.getIdJuego());
+                }
+
+                juegos.set(juegos.indexOf(juego),juego);
                 binding.rclvTopJuegos.getAdapter().notifyDataSetChanged();
 
 
