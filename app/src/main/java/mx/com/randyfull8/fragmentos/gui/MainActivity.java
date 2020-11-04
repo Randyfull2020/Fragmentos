@@ -7,6 +7,7 @@ import android.view.View;
 import java.util.HashMap;
 import mx.com.randyfull8.fragmentos.R;
 import mx.com.randyfull8.fragmentos.core.FragmentosApplication;
+import mx.com.randyfull8.fragmentos.gui.components.LoginFragment;
 import mx.com.randyfull8.fragmentos.gui.components.NavigationHost;
 
 public class MainActivity extends AppCompatActivity implements NavigationHost{
@@ -35,7 +36,7 @@ public class MainActivity extends AppCompatActivity implements NavigationHost{
 
          getSupportFragmentManager()
                  .beginTransaction()
-                 .add(R.id.contentPanel,new TopJuegos())
+                 .add(R.id.contentPanel,new LoginFragment())
                  .commit();
      }
     }
@@ -77,7 +78,7 @@ public class MainActivity extends AppCompatActivity implements NavigationHost{
 
         getSupportFragmentManager()
                 .beginTransaction()
-                .add(R.id.contentPanel,new MisJuegos())
+                .add(R.id.contentPanel,new Administrars())
                 .commit();
     }
     public void nuevofree(View view){

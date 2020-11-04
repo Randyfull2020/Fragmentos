@@ -1,5 +1,7 @@
 package mx.com.randyfull8.fragmentos.model;
 
+import java.util.Objects;
+
 public class Juego {
 
     private int idJuego;
@@ -57,5 +59,18 @@ public class Juego {
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Juego juego = (Juego) o;
+        return idJuego == juego.idJuego;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(idJuego);
     }
 }

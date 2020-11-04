@@ -17,7 +17,7 @@ import mx.com.randyfull8.fragmentos.model.MisJuego;
 public class AdministrarsAdapter extends RecyclerView.Adapter<AdministrarsAdapter.ViewHolder> {
     private List<MisJuego> misJuegos;
     private Context context;
-    public AdministrarsAdapter(List<MisJuego> misJuegos) {
+    public AdministrarsAdapter(List<Administrars> administrars) {
         this.misJuegos = misJuegos;
     }
     @NonNull

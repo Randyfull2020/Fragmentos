@@ -86,6 +86,7 @@
                         android:layout_marginRight="12dp"
                         android:layout_toStartOf="@id/next_button"
                         android:layout_toLeftOf="@id/next_button"
+
                         android:text="Cancelar"/>
                     <com.google.android.material.button.MaterialButton
                         android:layout_width="wrap_content"

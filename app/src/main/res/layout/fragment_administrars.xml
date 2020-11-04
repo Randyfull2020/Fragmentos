@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".gui.MisJuegos"
+    tools:context=".gui.Administrars"
     android:clipChildren="false"
     android:clipToPadding="false"
     >
@@ -44,19 +44,20 @@
         android:elevation="8dp"
         android:fillViewport="true"
         app:layout_behavior = "@string/appbar_scrolling_view_behavior"
-        android:id="@+id/gridMisJuegos"
+        android:id="@+id/gridAdministrars"
         android:background="@color/productGridBackgroundColor"
         >
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginTop="1dp"
             android:orientation="vertical">
             <TextView
                 style="@style/Widget.Ebony.Button.TextButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="25dp"
-                android:text="Mis Juegos"
+                android:text="Administrar"
                 android:textAlignment="textStart"
                 />
             <androidx.recyclerview.widget.RecyclerView
@@ -69,11 +70,11 @@
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/fab_cart"
+        android:id="@+id/ic_mas1"
         style="@style/Widget.Design.FloatingActionButton"
         android:layout_gravity="bottom|end"
         android:layout_margin="15dp"
         android:elevation="10dp"
-        android:src="@drawable/ic_cart"
+        android:src="@drawable/ic_mas1"
         app:elevation="10dp"/>
 </FrameLayout>
