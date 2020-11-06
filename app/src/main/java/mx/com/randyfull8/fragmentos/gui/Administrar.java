@@ -22,15 +22,15 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.ArrayList;
 import java.util.List;
 import mx.com.randyfull8.fragmentos.R;
-import mx.com.randyfull8.fragmentos.databinding.FragmentAdministrarsBinding;
-import mx.com.randyfull8.fragmentos.gui.components.AdministrarsAdapter;
+import mx.com.randyfull8.fragmentos.databinding.FragmentAdministrarBinding;
+import mx.com.randyfull8.fragmentos.gui.components.AdministrarAdapter;
 import mx.com.randyfull8.fragmentos.gui.components.NavigationHost;
 import mx.com.randyfull8.fragmentos.gui.components.NavigationIconClickListener;
 import mx.com.randyfull8.fragmentos.model.Juego;
 
-public class Administrars extends Fragment {
+public class Administrar extends Fragment {
 
-    private FragmentAdministrarsBinding binding;
+    private FragmentAdministrarBinding binding;
     private View view;
     private Context context;
     private List<Juego> juegos = new ArrayList<>();
@@ -66,7 +66,7 @@ public class Administrars extends Fragment {
     }
 
     private void configView(LayoutInflater inflater,ViewGroup container) {
-        binding = FragmentAdministrarsBinding.inflate(inflater, container, false);
+        binding = FragmentAdministrarBinding.inflate(inflater, container, false);
         view = binding.getRoot();
         context = container.getContext();
     }
@@ -102,7 +102,7 @@ public class Administrars extends Fragment {
                 if (!juegos.contains(juego)) {
                     juegos.add(juego);
                 }
-                binding.rclvAdministrars.getAdapter().notifyDataSetChanged();
+                binding.rclvAdministrar.getAdapter().notifyDataSetChanged();
             }
 
             @Override
@@ -113,7 +113,7 @@ public class Administrars extends Fragment {
                 }
 
                 juegos.set(juegos.indexOf(juego),juego);
-                binding.rclvAdministrars.getAdapter().notifyDataSetChanged();
+                binding.rclvAdministrar.getAdapter().notifyDataSetChanged();
             }
 
             @Override
@@ -132,9 +132,9 @@ public class Administrars extends Fragment {
             }
         });
 
-        binding.rclvAdministrars.setHasFixedSize(true);
+        binding.rclvAdministrar.setHasFixedSize(true);
         LinearLayoutManager layoutManager = new LinearLayoutManager(context, RecyclerView.VERTICAL,false);
-        binding.rclvAdministrars.setLayoutManager(layoutManager);
-        binding.rclvAdministrars.setAdapter(new AdministrarsAdapter(juegos));
+        binding.rclvAdministrar.setLayoutManager(layoutManager);
+        binding.rclvAdministrar.setAdapter(new AdministrarAdapter(juegos));
     }
 }

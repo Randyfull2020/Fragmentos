@@ -16,25 +16,25 @@ import java.util.List;
 import mx.com.randyfull8.fragmentos.R;
 import mx.com.randyfull8.fragmentos.model.Juego;
 
-public class AdministrarsAdapter extends RecyclerView.Adapter<AdministrarsAdapter.ViewHolder> {
+public class AdministrarAdapter extends RecyclerView.Adapter<AdministrarAdapter.ViewHolder> {
 
-    private List<Juego> administrars;
+    private List<Juego> administrar;
 
     private Context context;
 
-    public AdministrarsAdapter(List<Juego> administraciones) {
-        this.administrars = administraciones;
+    public AdministrarAdapter(List<Juego> administraciones) {
+        this.administrar = administraciones;
     }
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_administrars, parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_administrar, parent,false);
         context = parent.getContext();
         return new ViewHolder(view);
     }
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        Juego administracion = administrars.get(position);
+        Juego administracion = administrar.get(position);
         String imgUri = administracion.getImagen();
         RequestOptions options = new RequestOptions()
                 .diskCacheStrategy(DiskCacheStrategy.RESOURCE)
@@ -52,7 +52,7 @@ public class AdministrarsAdapter extends RecyclerView.Adapter<AdministrarsAdapte
 
     @Override
     public int getItemCount() {
-        return administrars.size();
+        return administrar.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

@@ -130,7 +130,7 @@ public class AddFragment extends Fragment {
 
                 Toast.makeText(getActivity(), "listo", Toast.LENGTH_SHORT).show();
 
-                ((NavigationHost) getActivity()).navigateTo(new Administrars(), true);
+                ((NavigationHost) getActivity()).navigateTo(new Administrar(), true);
             }
 
         });
@@ -138,7 +138,7 @@ public class AddFragment extends Fragment {
         cancelar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ((NavigationHost) getActivity()).navigateTo(new Administrars(), true);
+                ((NavigationHost) getActivity()).navigateTo(new Administrar(), true);
             }
         });
 

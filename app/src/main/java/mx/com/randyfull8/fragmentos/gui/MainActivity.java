@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity implements NavigationHost{
 
         getSupportFragmentManager()
                 .beginTransaction()
-                .add(R.id.contentPanel,new Administrars())
+                .add(R.id.contentPanel,new Administrar())
                 .commit();
     }
     public void nuevofree(View view){

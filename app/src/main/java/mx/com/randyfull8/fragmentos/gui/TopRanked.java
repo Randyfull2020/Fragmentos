@@ -7,12 +7,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AccelerateDecelerateInterpolator;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
 import java.util.ArrayList;
 import java.util.List;
+
 import mx.com.randyfull8.fragmentos.R;
 import mx.com.randyfull8.fragmentos.databinding.FragmentTopRankedBinding;
 import mx.com.randyfull8.fragmentos.gui.components.JuegosAdapter;

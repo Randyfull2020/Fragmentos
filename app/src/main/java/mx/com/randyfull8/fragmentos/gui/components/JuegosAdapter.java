@@ -5,11 +5,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.appcompat.widget.AppCompatRatingBar;
 import androidx.recyclerview.widget.RecyclerView;
+
 import java.util.List;
+
 import mx.com.randyfull8.fragmentos.R;
 import mx.com.randyfull8.fragmentos.model.Juego;
 
@@ -19,6 +22,7 @@ public class JuegosAdapter extends RecyclerView.Adapter<JuegosAdapter.ViewHolder
     public JuegosAdapter(List<Juego> juegos) {
         this.juegos = juegos;
     }
+
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

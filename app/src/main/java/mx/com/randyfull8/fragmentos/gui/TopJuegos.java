@@ -3,25 +3,15 @@ package mx.com.randyfull8.fragmentos.gui;
 import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AccelerateDecelerateInterpolator;
 
-import com.google.firebase.database.ChildEventListener;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -77,11 +67,11 @@ private static final String PATH_TOP="topJuegos";
         }
     }
     private void configRecycler() {
-//        juegos.add(new Juego(1,"halo", "Halo", 5,"Master chief es la onda!"));
-//        juegos.add(new Juego(2,"cof", "Call of duty", 2,"Free Fire para fresas"));
-//        juegos.add(new Juego(3,"mariokart", "Mario Kart ", 5,"Un clásico"));
-//        juegos.add(new Juego(4,"maincra", "Maincra", 1,"Sin comentarios"));
-//        juegos.add(new Juego(5,"dest2", "Destinity 2", 5,"El legado de Halo"));
+       juegos.add(new Juego("1","halo", "Halo", 5,"Master chief es la onda!"));
+       juegos.add(new Juego("2","cof", "Call of duty", 2,"Free Fire para fresas"));
+       juegos.add(new Juego("3","mariokart", "Mario Kart ", 5,"Un clásico"));
+       juegos.add(new Juego("4","maincra", "Maincra", 1,"Sin comentarios"));
+       juegos.add(new Juego("5","dest2", "Destinity 2", 5,"El legado de Halo"));
 
         binding.rclvTopJuegos.setHasFixedSize(true);
         LinearLayoutManager layoutManager = new LinearLayoutManager(context, RecyclerView.HORIZONTAL, false);
@@ -90,7 +80,7 @@ private static final String PATH_TOP="topJuegos";
 
 
 
-        FirebaseDatabase database=FirebaseDatabase.getInstance();
+       /* FirebaseDatabase database=FirebaseDatabase.getInstance();
         DatabaseReference reference = database.getReference(PATH_TOP);
         reference.addChildEventListener(new ChildEventListener() {
             @Override
@@ -135,6 +125,8 @@ private static final String PATH_TOP="topJuegos";
 
             }
         });
+
+        */
 
     }
     private void configView(LayoutInflater inflater,ViewGroup container) {

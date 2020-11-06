@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "473917427676",
+    "firebase_url": "https://fragmentos2.firebaseio.com",
+    "project_id": "fragmentos2",
+    "storage_bucket": "fragmentos2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:473917427676:android:8bd7d5db78ab1537e78919",
+        "android_client_info": {
+          "package_name": "mx.com.randyfull8.fragmentos"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "473917427676-6rkng4cdcjj3jio8jjdsq0e8g89ssse9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAnMleXuoOPwWCCXpGeialDoGWpYGilaHA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "473917427676-6rkng4cdcjj3jio8jjdsq0e8g89ssse9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
