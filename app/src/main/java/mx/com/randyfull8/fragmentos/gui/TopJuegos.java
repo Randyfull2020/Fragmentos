@@ -24,12 +24,12 @@ import mx.com.randyfull8.fragmentos.model.Juego;
 
 public class TopJuegos extends Fragment {
 
-private FragmentTopJuegosBinding binding;
+    private FragmentTopJuegosBinding binding;
 
     private View view;
     private Context context;
-private List<Juego> juegos = new ArrayList<>();
-private static final String PATH_TOP="topJuegos";
+    private List<Juego> juegos = new ArrayList<>();
+    private static final String PATH_TOP="topJuegos";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -67,11 +67,11 @@ private static final String PATH_TOP="topJuegos";
         }
     }
     private void configRecycler() {
-       juegos.add(new Juego("1","halo", "Halo", 5,"Master chief es la onda!"));
-       juegos.add(new Juego("2","cof", "Call of duty", 2,"Free Fire para fresas"));
-       juegos.add(new Juego("3","mariokart", "Mario Kart ", 5,"Un clásico"));
-       juegos.add(new Juego("4","maincra", "Maincra", 1,"Sin comentarios"));
-       juegos.add(new Juego("5","dest2", "Destinity 2", 5,"El legado de Halo"));
+        juegos.add(new Juego("1","halo", "master chief", 5,"halo"));
+        juegos.add(new Juego("2","cof", "free fire de fresas", 2,"cof"));
+        juegos.add(new Juego("3","mario kart", "clasicoco", 5,"mariokart"));
+        juegos.add(new Juego("4","maincra", "sin comentarios", 1,"maincra"));
+        juegos.add(new Juego("5","dest 2", "el nuevo halo", 5,"dest2"));
 
         binding.rclvTopJuegos.setHasFixedSize(true);
         LinearLayoutManager layoutManager = new LinearLayoutManager(context, RecyclerView.HORIZONTAL, false);

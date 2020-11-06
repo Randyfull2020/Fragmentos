@@ -1,10 +1,13 @@
 package mx.com.randyfull8.fragmentos.gui;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentTransaction;
 import android.os.Bundle;
 import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentTransaction;
+
 import java.util.HashMap;
+
 import mx.com.randyfull8.fragmentos.R;
 import mx.com.randyfull8.fragmentos.core.FragmentosApplication;
 import mx.com.randyfull8.fragmentos.gui.components.NavigationHost;
@@ -12,7 +15,7 @@ import mx.com.randyfull8.fragmentos.gui.components.NavigationHost;
 public class MainActivity extends AppCompatActivity implements NavigationHost{
 
     public static HashMap<String, Object> GLOBALS= new HashMap<>();
-//hola
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
