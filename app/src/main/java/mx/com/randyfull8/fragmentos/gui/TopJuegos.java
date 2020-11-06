@@ -46,7 +46,6 @@ private static final String PATH_TOP="topJuegos";
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
     }
-    //u
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
         configGlobals();

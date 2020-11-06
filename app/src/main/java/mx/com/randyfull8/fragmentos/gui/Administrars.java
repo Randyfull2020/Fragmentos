@@ -3,55 +3,49 @@ package mx.com.randyfull8.fragmentos.gui;
 import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AccelerateDecelerateInterpolator;
-
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import java.util.ArrayList;
 import java.util.List;
-
 import mx.com.randyfull8.fragmentos.R;
 import mx.com.randyfull8.fragmentos.databinding.FragmentAdministrarsBinding;
-import mx.com.randyfull8.fragmentos.databinding.FragmentTopJuegosBinding;
-import mx.com.randyfull8.fragmentos.gui.components.JuegosAdapter;
-import mx.com.randyfull8.fragmentos.gui.components.MisJuegosAdapter;
+import mx.com.randyfull8.fragmentos.gui.components.AdministrarsAdapter;
 import mx.com.randyfull8.fragmentos.gui.components.NavigationHost;
 import mx.com.randyfull8.fragmentos.gui.components.NavigationIconClickListener;
-import mx.com.randyfull8.fragmentos.model.Categoria;
 import mx.com.randyfull8.fragmentos.model.Juego;
-import mx.com.randyfull8.fragmentos.model.MisJuego;
 
 public class Administrars extends Fragment {
 
     private FragmentAdministrarsBinding binding;
-
     private View view;
     private Context context;
-    private List<MisJuego> Misjuegos = new ArrayList<>();
-    private LayoutInflater inflater;
-    private ViewGroup container;
-    private Bundle savedInstanceState;
+    private List<Juego> juegos = new ArrayList<>();
+
+    private static final String PATH_TOP = "topJuegos";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
-//binding.
-
-
     }
+
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
-        this.inflater = inflater;
-        this.container = container;
-        this.savedInstanceState = savedInstanceState;
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
         configGlobals();
         configView(inflater, container);
         configToolBar();
@@ -67,28 +61,16 @@ public class Administrars extends Fragment {
         return view;
     }
 
-
     private void configGlobals() {
-        MainActivity.GLOBALS.put("AdministrarFragment",this);
+        MainActivity.GLOBALS.put("administrarFragment",this);
     }
-    private void configToolbar() {
-        AppCompatActivity activity = (AppCompatActivity) getActivity();
-        if (activity != null) {
-            activity.setSupportActionBar(binding.appBar);
-        }
-        binding.appBar.setNavigationOnClickListener(new NavigationIconClickListener(
-                context,
-                view.findViewById(R.id.gridAdministrars),
-                new AccelerateDecelerateInterpolator(),
-                context.getDrawable(R.drawable.menu),
-                context.getDrawable(R.drawable.menu_open)
-        ));
+
+    private void configView(LayoutInflater inflater,ViewGroup container) {
+        binding = FragmentAdministrarsBinding.inflate(inflater, container, false);
+        view = binding.getRoot();
+        context = container.getContext();
     }
-    private void configUI() {
-        if (Build.VERSION.SDK_INT>=Build.VERSION_CODES.M){
-            view.findViewById(R.id.gridAdministrars).setBackground(getContext().getDrawable(R.drawable.product_grid_background_shape));
-        }
-    }
+
     private void configToolBar() {
         AppCompatActivity activity = (AppCompatActivity)getActivity();
         if (activity!=null){
@@ -102,36 +84,57 @@ public class Administrars extends Fragment {
         ));
     }
 
+    private void configUI() {
+        if (Build.VERSION.SDK_INT>=Build.VERSION_CODES.M){
+            view.findViewById(R.id.gridAdministrars).setBackground(getContext().getDrawable(R.drawable.product_grid_background_shape));
+        }
+    }
+
     private void configRecycler() {
-        Misjuegos.add(new MisJuego(1,"halo", "Halo", 5,"Master chief es la onda!"));
-        Misjuegos.add(new MisJuego(2,"cof", "Call of duty", 2,"Free Fire para fresas"));
-        Misjuegos.add(new MisJuego(3,"mariokart", "Mario Kart ", 5,"Un clásico"));
-        Misjuegos.add(new MisJuego(4,"maincra", "Maincra", 1,"Sin comentarios"));
-        Misjuegos.add(new MisJuego(5,"dest2", "Destinity 2", 5,"El legado de Halo"));
-        Misjuegos.add(new MisJuego(6,"angrybirds", "Angry Birds", 1,"El mejor juego para dispositivo movil de hace años"));
-        Misjuegos.add(new MisJuego(7,"among", "Among Us", 2,"Quien fue?"));
-        Misjuegos.add(new MisJuego(8,"dreamleague", "Dream League 2020", 3,"Fifa de los celulares"));
-        Misjuegos.add(new MisJuego(9,"freefire", "Free Fire", 1,"Call Of Duty de los pobres"));
-        Misjuegos.add(new MisJuego(10,"clash", "Clash Royale", 5,"Pay To Win"));
-        Misjuegos.add(new MisJuego(11,"halo", "Halo", 5,"Master chief es la onda!"));
-        Misjuegos.add(new MisJuego(12,"cof", "Call of duty", 2,"Free Fire para fresas"));
-        Misjuegos.add(new MisJuego(13,"mariokart", "Mario Kart ", 5,"Un clásico"));
-        Misjuegos.add(new MisJuego(14,"maincra", "Maincra", 1,"Sin comentarios"));
-        Misjuegos.add(new MisJuego(15,"dest2", "Destinity 2", 5,"El legado de Halo"));
-        Misjuegos.add(new MisJuego(16,"mario", "Super Mario Bros", 5,"La infancia de todos"));
-        Misjuegos.add(new MisJuego(17,"kof", "The King Of Fighters", 4,"El peso de las tortillas"));
-        Misjuegos.add(new MisJuego(18,"street", "Street Fighter", 3,"La competencia de KOF"));
-        Misjuegos.add(new MisJuego(19,"pacman", "Pac-Man", 2,"Uno de los primeros hits"));
-        Misjuegos.add(new MisJuego(20,"galaga", "Galaga", 1,"casi casi Star Wars"));
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference reference = database.getReference(PATH_TOP);
+
+        reference.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+                Juego juego = snapshot.getValue(Juego.class);
+
+                if (!juegos.contains(juego)) {
+                    juegos.add(juego);
+                }
+                binding.rclvAdministrars.getAdapter().notifyDataSetChanged();
+            }
+
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+                Juego juego = snapshot.getValue(Juego.class);
+                if (juego != null){
+                    Log.i("juego","onChildChanged: " + juego.getIdJuego());
+                }
+
+                juegos.set(juegos.indexOf(juego),juego);
+                binding.rclvAdministrars.getAdapter().notifyDataSetChanged();
+            }
+
+            @Override
+            public void onChildRemoved(@NonNull DataSnapshot snapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
 
         binding.rclvAdministrars.setHasFixedSize(true);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(context, RecyclerView.VERTICAL, false);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(context, RecyclerView.VERTICAL,false);
         binding.rclvAdministrars.setLayoutManager(layoutManager);
-        binding.rclvAdministrars.setAdapter(new MisJuegosAdapter(Misjuegos));
-    }
-    private void configView(LayoutInflater inflater,ViewGroup container) {
-        binding=FragmentAdministrarsBinding.inflate(inflater,container,false);
-        view=binding.getRoot();
-        context=container.getContext();
+        binding.rclvAdministrars.setAdapter(new AdministrarsAdapter(juegos));
     }
 }

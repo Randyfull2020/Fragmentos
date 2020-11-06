@@ -7,7 +7,6 @@ import android.view.View;
 import java.util.HashMap;
 import mx.com.randyfull8.fragmentos.R;
 import mx.com.randyfull8.fragmentos.core.FragmentosApplication;
-import mx.com.randyfull8.fragmentos.gui.components.LoginFragment;
 import mx.com.randyfull8.fragmentos.gui.components.NavigationHost;
 
 public class MainActivity extends AppCompatActivity implements NavigationHost{

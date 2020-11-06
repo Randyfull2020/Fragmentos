@@ -3,38 +3,29 @@ package mx.com.randyfull8.fragmentos.model;
 import java.util.Objects;
 
 public class Juego {
-
-    private int idJuego;
-    private String imagen;
+    private String idJuego;
     private String titulo;
-    private int clasificacion;
     private String descripcion;
+    private int clasificacion;
+    private String imagen;
 
     public Juego() {
     }
 
-    public Juego(int idJuego, String imagen, String titulo, int clasificacion, String descripcion) {
+    public Juego(String idJuego, String titulo, String descripcion, int clasificacion, String imagen) {
         this.idJuego = idJuego;
-        this.imagen = imagen;
         this.titulo = titulo;
-        this.clasificacion = clasificacion;
         this.descripcion = descripcion;
+        this.clasificacion = clasificacion;
+        this.imagen = imagen;
     }
 
-    public int getIdJuego() {
+    public String getIdJuego() {
         return idJuego;
     }
 
-    public void setIdJuego(int idJuego) {
+    public void setIdJuego(String idJuego) {
         this.idJuego = idJuego;
-    }
-
-    public String getImagen() {
-        return imagen;
-    }
-
-    public void setImagen(String imagen) {
-        this.imagen = imagen;
     }
 
     public String getTitulo() {
@@ -45,14 +36,6 @@ public class Juego {
         this.titulo = titulo;
     }
 
-    public int getClasificacion() {
-        return clasificacion;
-    }
-
-    public void setClasificacion(int clasificacion) {
-        this.clasificacion = clasificacion;
-    }
-
     public String getDescripcion() {
         return descripcion;
     }
@@ -61,12 +44,28 @@ public class Juego {
         this.descripcion = descripcion;
     }
 
+    public int getClasificacion() {
+        return clasificacion;
+    }
+
+    public void setClasificacion(int clasificacion) {
+        this.clasificacion = clasificacion;
+    }
+
+    public String getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Juego juego = (Juego) o;
-        return idJuego == juego.idJuego;
+        return Objects.equals(idJuego, juego.idJuego);
     }
 
     @Override

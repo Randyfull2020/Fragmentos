@@ -40,10 +40,20 @@
             android:orientation="vertical">
             <androidx.appcompat.widget.AppCompatImageView
                 android:layout_width="match_parent"
+
                 android:layout_height="300dp"
                 android:layout_gravity="center_horizontal"
                 android:scaleType="centerCrop"
                 android:id="@+id/imgJuego"/>
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnDelete"
+                android:src="@android:drawable/ic_menu_close_clear_cancel"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                app:layout_constraintEnd_toEndOf="@id/imgJuego"
+                app:layout_constraintTop_toTopOf="@id/imgJuego"
+                android:visibility="gone"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
