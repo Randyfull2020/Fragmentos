@@ -48,11 +48,11 @@ public class AddFragment extends Fragment {
     private EditText edit2;
     private Button guardar;
     private Button cancelar;
-    private AppCompatRatingBar clasi;
+    private AppCompatRatingBar clasifi;
     private ImageButton btnDelete;
     private ConstraintLayout cL;
-
-    public int i = 10;
+    
+    public int cantJuegos = 100;
     private DatabaseReference mDataBase;
 
     private static final int RC_GALERY = 21;
@@ -96,7 +96,7 @@ public class AddFragment extends Fragment {
         edit2 = view.findViewById(R.id.txtDescripcion);
         guardar = view.findViewById(R.id.btnGuardar);
         cancelar = view.findViewById(R.id.btnCancelar);
-        clasi = view.findViewById(R.id.rbClasificacion);
+        clasifi = view.findViewById(R.id.rbClasificacion);
         btnDelete = view.findViewById(R.id.btnDelete);
         cL = view.findViewById(R.id.container);
 
@@ -116,7 +116,7 @@ public class AddFragment extends Fragment {
                 newJuego = databaseReference.push();
                 Juego juego = new Juego();
                 juego.setIdJuego(newJuego.getKey());
-                juego.setClasificacion((int)clasi.getRating());
+                juego.setClasificacion((int)clasifi.getRating());
                 juego.setDescripcion(edit2.getText().toString());
                 juego.setImagen("halo");
                 juego.setTitulo(edit1.getText().toString());

@@ -1,16 +1,21 @@
 package mx.com.randyfull8.fragmentos.gui.components;
 
+
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.recyclerview.widget.RecyclerView;
+
 import java.util.List;
+
 import mx.com.randyfull8.fragmentos.R;
 import mx.com.randyfull8.fragmentos.model.Categoria;
+
 
 public class CategoriasAdapter extends RecyclerView.Adapter <CategoriasAdapter.ViewHolder> {
     private List<Categoria> categorias;

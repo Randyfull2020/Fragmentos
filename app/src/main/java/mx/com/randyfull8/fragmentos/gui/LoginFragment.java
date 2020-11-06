@@ -55,11 +55,12 @@ public class LoginFragment extends Fragment {
                 if (txtUser.getText().toString().equals("") && txtPassword.getText().toString().equals("")){
                     ((NavigationHost)MainActivity.GLOBALS.get("app")).navigateTo(new TopJuegos(),false);
                 }else{
+                    Toast.makeText(getActivity(), "Solo tienes que dar en iniciar sesión", Toast.LENGTH_SHORT).show();
                     txtUser.setText("");
                     txtUser.setHint("Solo da en iniciar sesión");
                     txtPassword.setText("");
                     txtPassword.setHint("Password");
-                    Toast.makeText(getActivity(), "Solo tienes que dar en iniciar sesión", Toast.LENGTH_SHORT).show();
+
                 }
             }
         });
