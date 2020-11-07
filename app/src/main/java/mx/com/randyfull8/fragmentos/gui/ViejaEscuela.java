@@ -57,13 +57,11 @@ private List<Juego> juegos = new ArrayList<>();
                 context.getDrawable(R.drawable.menu_open)
         ));
     }
-
     private void configUI() {
         if (Build.VERSION.SDK_INT>=Build.VERSION_CODES.M){
             view.findViewById(R.id.gridTopGames).setBackground(getContext().getDrawable(R.drawable.product_grid_background_shape));
         }
     }
-
     private void configRecycler() {
         juegos.add(new Juego("1","Mario", "Infancia pura", 5,"mario"));
         juegos.add(new Juego("2","The King Of Fighters", "El peso de tortillas", 4,"kof"));

@@ -17,11 +17,8 @@ import mx.com.randyfull8.fragmentos.R;
 import mx.com.randyfull8.fragmentos.model.Juego;
 
 public class AdministrarAdapter extends RecyclerView.Adapter<AdministrarAdapter.ViewHolder> {
-
     private List<Juego> administrar;
-
     private Context context;
-
     public AdministrarAdapter(List<Juego> administraciones) {
         this.administrar = administraciones;
     }
@@ -49,19 +46,16 @@ public class AdministrarAdapter extends RecyclerView.Adapter<AdministrarAdapter.
         holder.rbClasificacion.setRating(administracion.getClasificacion());
         holder.txtDescripcion.setText(administracion.getDescripcion());
     }
-
     @Override
     public int getItemCount() {
         return administrar.size();
     }
-
     public class ViewHolder extends RecyclerView.ViewHolder {
         private View view;
         private AppCompatImageView icAdministrar;
         private TextView txtTitulo;
         private AppCompatRatingBar rbClasificacion;
         private TextView txtDescripcion;
-
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             icAdministrar = itemView.findViewById(R.id.gamev);

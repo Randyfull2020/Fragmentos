@@ -18,14 +18,12 @@ import mx.com.randyfull8.fragmentos.databinding.FragmentLoginBinding;
 import mx.com.randyfull8.fragmentos.gui.components.NavigationHost;
 
 public class LoginFragment extends Fragment {
-
     private FragmentLoginBinding binding;
     private View view;
     private Context context;
     private MaterialButton cancel;
     private TextInputEditText txtUser;
     private TextInputEditText txtPassword;
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -35,14 +33,12 @@ public class LoginFragment extends Fragment {
 
         return view;
     }
-
     private void configListeners() {
 
         Objects.requireNonNull(binding.cancel).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 System.exit(0);
-
             }
         });
 
@@ -62,14 +58,11 @@ public class LoginFragment extends Fragment {
                 }
             }
         });
-
-
     }
 
     private void configGlobal() {
         MainActivity.GLOBALS.put("loginFragment",this);
     }
-
     private void configView(LayoutInflater inflater, ViewGroup container) {
         binding = FragmentLoginBinding.inflate(inflater, container, false);
         view = binding.getRoot();

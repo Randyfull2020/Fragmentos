@@ -20,18 +20,15 @@ import mx.com.randyfull8.fragmentos.gui.components.NavigationIconClickListener;
 import mx.com.randyfull8.fragmentos.model.Categoria;
 
 public class Categorias extends Fragment {
-
     private FragmentCategoriasBinding binding;
     private View view;
     private Context context;
     private List<Categoria> categoria = new ArrayList<>();
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
     }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -42,17 +39,14 @@ public class Categorias extends Fragment {
         configRecycler();
         return view;
     }
-
     private void configGlobals() {
         MainActivity.GLOBALS.put("CategoriasFragment",this);
     }
-
     private void configView(LayoutInflater inflater, ViewGroup container) {
         binding = FragmentCategoriasBinding.inflate(inflater,container,false);
         view = binding.getRoot();
         context = container.getContext();
     }
-
     private void configToolbar() {
         AppCompatActivity activity = (AppCompatActivity)getActivity();
         if(activity!=null){
@@ -68,13 +62,11 @@ public class Categorias extends Fragment {
         }
     }
     private void configRecycler() {
-
         categoria.add(new Categoria(1,"accion","Accion"));
         categoria.add(new Categoria(2,"aventura","Aventura"));
         categoria.add(new Categoria(3,"deporte","Deporte"));
         categoria.add(new Categoria(4,"estrategia","Estrategia"));
         categoria.add(new Categoria(5,"rol","Rol"));
-
         binding.rclvCategorias.setHasFixedSize(true);
         LinearLayoutManager layoutManager = new LinearLayoutManager(context, RecyclerView.VERTICAL,false);
         binding.rclvCategorias.setLayoutManager(layoutManager);

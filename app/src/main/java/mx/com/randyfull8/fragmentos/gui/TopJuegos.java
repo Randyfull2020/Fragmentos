@@ -77,13 +77,10 @@ public class TopJuegos extends Fragment {
         juegos.add(new Juego("3","mario kart", "clasicoco", 5,"mariokart"));
         juegos.add(new Juego("4","maincra", "sin comentarios", 1,"maincra"));
         juegos.add(new Juego("5","dest 2", "el nuevo halo", 5,"dest2"));
-
         binding.rclvTopJuegos.setHasFixedSize(true);
         LinearLayoutManager layoutManager = new LinearLayoutManager(context, RecyclerView.HORIZONTAL, false);
         binding.rclvTopJuegos.setLayoutManager(layoutManager);
         binding.rclvTopJuegos.setAdapter(new JuegosAdapter(juegos));
-
-
 
       /* FirebaseDatabase database=FirebaseDatabase.getInstance();
         DatabaseReference reference = database.getReference(PATH_TOP);
@@ -111,7 +108,6 @@ public class TopJuegos extends Fragment {
 
                 juegos.set(juegos.indexOf(juego),juego);
                 binding.rclvTopJuegos.getAdapter().notifyDataSetChanged();
-
 
             }
 

@@ -47,70 +47,49 @@ public class AddFragment extends Fragment {
     private EditText edit1;
     private EditText edit2;
     private Button guardar;
-    private Button cancelar;
+    private Button agregar;
     private AppCompatRatingBar clasifi;
     private ImageButton btnDelete;
     private ConstraintLayout cL;
-    
-    public int cantJuegos = 100;
-    private DatabaseReference mDataBase;
-
-    private static final int RC_GALERY = 21;
-    private static final int RC_CAMERA = 22;
-
-    private static final int RP_CAMERA = 121;
-    private static final int RP_STORAGE = 122;
-
-    private static final String IMAGE_DIRECTORY = "/MyPhotoApp";
     private static final String MY_PHOTO = "my_photo";
-
     private static final String PATH_PROFILE = "topJuegos";
+    private static final int RC_GALERY = 21;
     private static final String PATH_PHOTO_URL = "1";
-
     private TextView lblMessage;
     private FragmentAddBinding binding;
-
     private StorageReference storageReference;
     private DatabaseReference databaseReference;
     private DatabaseReference newJuego;
-
     private String currentPhotoPath;
     private Uri photoSelectedUri;
-
     private String my_photo="";
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
     }
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_add, container, false);
-
         imageView = view.findViewById(R.id.imgJuego);
         edit1 = view.findViewById(R.id.txtTitulo);
         edit2 = view.findViewById(R.id.txtDescripcion);
         guardar = view.findViewById(R.id.btnGuardar);
-        cancelar = view.findViewById(R.id.btnCancelar);
+        agregar = view.findViewById(R.id.btnCancelar);
         clasifi = view.findViewById(R.id.rbClasificacion);
-        btnDelete = view.findViewById(R.id.btnDelete);
+        btnDelete = view.findViewById(R.id.addtt);
         cL = view.findViewById(R.id.container);
-
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 fromGallery();
             }
         });
-
         guardar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 databaseReference = FirebaseDatabase.getInstance().getReference().child("topJuegos");
                 storageReference = FirebaseStorage.getInstance().getReference();
                 newJuego = databaseReference.push();
@@ -127,29 +106,24 @@ public class AddFragment extends Fragment {
                         UploadImage();
                     }
                 });
-
-                Toast.makeText(getActivity(), "listo", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "Se ha agregado correctamente", Toast.LENGTH_SHORT).show();
 
                 ((NavigationHost) getActivity()).navigateTo(new Administrar(), true);
             }
 
         });
-
-        cancelar.setOnClickListener(new View.OnClickListener() {
+        agregar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ((NavigationHost) getActivity()).navigateTo(new Administrar(), true);
             }
         });
-
         return view;
     }
-
     private void fromGallery() {
         Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
         startActivityForResult(intent, RC_GALERY);
     }
-
     private void UploadImage() {
         if (photoSelectedUri == null) {
             Snackbar.make(cL, R.string.main_message_uri_null, BaseTransientBottomBar.LENGTH_LONG).show();
@@ -206,7 +180,6 @@ public class AddFragment extends Fragment {
                     }
                 });
     }
-
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -225,7 +198,6 @@ public class AddFragment extends Fragment {
                     }
                     break;
             }
-
         }
     }
 }

@@ -61,7 +61,6 @@ public class MisJuegos extends Fragment {
                 context.getDrawable(R.drawable.menu_open)
         ));
     }
-
     private void configUI() {
         if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.M){
             view.findViewById(R.id.gridMisJuegos).setBackground(getContext().getDrawable(R.drawable.product_grid_background_shape));

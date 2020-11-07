@@ -29,29 +29,23 @@ import mx.com.randyfull8.fragmentos.gui.components.NavigationIconClickListener;
 import mx.com.randyfull8.fragmentos.model.Juego;
 
 public class Administrar extends Fragment {
-
     private FragmentAdministrarBinding binding;
     private View view;
     private Context context;
     private List<Juego> juegos = new ArrayList<>();
-
     private static final String PATH_TOP = "topJuegos";
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
     }
-
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
         configGlobals();
         configView(inflater, container);
         configToolBar();
         configUI();
         configRecycler();
-
         binding.icMas1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -60,7 +54,6 @@ public class Administrar extends Fragment {
         });
         return view;
     }
-
     private void configGlobals() {
         MainActivity.GLOBALS.put("administrarFragment",this);
     }
@@ -70,7 +63,6 @@ public class Administrar extends Fragment {
         view = binding.getRoot();
         context = container.getContext();
     }
-
     private void configToolBar() {
         AppCompatActivity activity = (AppCompatActivity)getActivity();
         if (activity!=null){
@@ -83,13 +75,11 @@ public class Administrar extends Fragment {
                 context.getDrawable(R.drawable.menu)
         ));
     }
-
     private void configUI() {
         if (Build.VERSION.SDK_INT>=Build.VERSION_CODES.M){
             view.findViewById(R.id.gridAdministrars).setBackground(getContext().getDrawable(R.drawable.product_grid_background_shape));
         }
     }
-
     private void configRecycler() {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference reference = database.getReference(PATH_TOP);
@@ -104,34 +94,25 @@ public class Administrar extends Fragment {
                 }
                 binding.rclvAdministrar.getAdapter().notifyDataSetChanged();
             }
-
             @Override
             public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
                 Juego juego = snapshot.getValue(Juego.class);
                 if (juego != null){
                     Log.i("juego","onChildChanged: " + juego.getIdJuego());
                 }
-
                 juegos.set(juegos.indexOf(juego),juego);
                 binding.rclvAdministrar.getAdapter().notifyDataSetChanged();
             }
-
             @Override
             public void onChildRemoved(@NonNull DataSnapshot snapshot) {
-
             }
-
             @Override
             public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-
             }
         });
-
         binding.rclvAdministrar.setHasFixedSize(true);
         LinearLayoutManager layoutManager = new LinearLayoutManager(context, RecyclerView.VERTICAL,false);
         binding.rclvAdministrar.setLayoutManager(layoutManager);

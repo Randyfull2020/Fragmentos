@@ -13,11 +13,9 @@
     android:layout_marginLeft="33dp"
     android:layout_marginTop="20dp"
     >
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/gamev"
             android:layout_width="155dp"
@@ -26,7 +24,6 @@
             android:layout_marginTop="2dp"
             android:layout_marginRight="4dp"
             android:scaleType="centerCrop" />
-
         <TextView
             android:id="@+id/txtTitulo"
             android:layout_width="match_parent"
@@ -35,7 +32,6 @@
             android:text="Titulo"
             android:textAlignment="center"
             android:textAppearance="?attr/textAppearanceHeadline6" />
-
         <androidx.appcompat.widget.AppCompatRatingBar
             android:id="@+id/rbClasificacion"
             style="@style/Widget.AppCompat.RatingBar.Indicator"
@@ -46,7 +42,6 @@
             android:layout_toRightOf="@id/gamev"
             android:numStars="5"
             android:rating="0" />
-
         <TextView
             android:id="@+id/txtDescripcion"
             android:layout_width="match_parent"

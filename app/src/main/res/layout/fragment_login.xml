@@ -7,7 +7,6 @@
     android:layout_height="match_parent"
     android:background="@color/loginPageBackgroundColor"
     tools:context=".gui.LoginFragment">
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -33,7 +32,6 @@
             android:text="@string/app_name"
             android:textAppearance="@style/TextAppearance.Ebony.Title"
             android:id="@+id/slogan"/>
-
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -48,7 +46,6 @@
                 android:textColorHighlight="@color/colorControlActivated"
                 android:id="@+id/username_edit_text"/>
         </com.google.android.material.textfield.TextInputLayout>
-
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -64,11 +61,9 @@
                 android:textColorHighlight="@color/colorControlActivated"
                 android:id="@+id/password_edit_text"/>
         </com.google.android.material.textfield.TextInputLayout>
-
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/okok"
                 style="@style/Widget.Ebony.Button"
@@ -79,7 +74,6 @@
                 android:layout_marginEnd="60dp"
                 android:layout_marginRight="60dp"
                 android:text="Iniciar sesion" />
-
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/cancel"
                 style="@style/Widget.Ebony.Button.TextButton"

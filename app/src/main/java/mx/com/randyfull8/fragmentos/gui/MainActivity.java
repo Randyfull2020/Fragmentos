@@ -13,9 +13,7 @@ import mx.com.randyfull8.fragmentos.core.FragmentosApplication;
 import mx.com.randyfull8.fragmentos.gui.components.NavigationHost;
 
 public class MainActivity extends AppCompatActivity implements NavigationHost{
-
     public static HashMap<String, Object> GLOBALS= new HashMap<>();
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,7 +21,6 @@ public class MainActivity extends AppCompatActivity implements NavigationHost{
         configContext();
         configGlobals();
         configFragmentsManager(savedInstanceState);
-
     }
     private void configContext() {
         FragmentosApplication.setAppContext(getApplicationContext());
@@ -48,7 +45,6 @@ public class MainActivity extends AppCompatActivity implements NavigationHost{
                 .add(R.id.contentPanel,new TopRanked())
                 .commit();
     }
-
     public void nuevomisjuegos(View view){
 
         getSupportFragmentManager()
@@ -56,14 +52,12 @@ public class MainActivity extends AppCompatActivity implements NavigationHost{
                 .add(R.id.contentPanel,new MisJuegos())
                 .commit();
     }
-
     public void nuevocategoria(View view){
         getSupportFragmentManager()
                 .beginTransaction()
                 .add(R.id.contentPanel,new Categorias())
                 .commit();
     }
-    //
     public void nuevotop(View view){
         getSupportFragmentManager()
                 .beginTransaction()
