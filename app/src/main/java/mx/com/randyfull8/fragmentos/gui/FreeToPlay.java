@@ -18,16 +18,17 @@ import java.util.List;
 
 import mx.com.randyfull8.fragmentos.R;
 import mx.com.randyfull8.fragmentos.databinding.FragmentFreeToPlayBinding;
+import mx.com.randyfull8.fragmentos.gui.components.JuegosAdapter;
 import mx.com.randyfull8.fragmentos.gui.components.NavigationIconClickListener;
 import mx.com.randyfull8.fragmentos.model.Juego;
 
 public class FreeToPlay extends Fragment {
 
-private FragmentFreeToPlayBinding binding;
+    private FragmentFreeToPlayBinding binding;
 
     private View view;
     private Context context;
-private List<Juego> juegos = new ArrayList<>();
+    private List<Juego> juegos = new ArrayList<>();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -67,16 +68,17 @@ private List<Juego> juegos = new ArrayList<>();
     }
 
     private void configRecycler() {
-        juegos.add(new Juego("1","angrybirds", "Angry Birds", 1,"El mejor juego para dispositivo movil de hace años"));
-        juegos.add(new Juego("2","among", "Among Us", 2,"Quien fue?"));
-        juegos.add(new Juego("3","dreamleague", "Dream League 2020", 3,"Fifa de los celulares"));
-        juegos.add(new Juego("4","freefire", "Free Fire", 1,"Call Of Duty de los pobres"));
-        juegos.add(new Juego("5","clash", "Clash Royale", 5,"Pay To Win"));
-binding.rclvFreeToPlay.setHasFixedSize(true);
+        juegos.add(new Juego("1","Angry birds", "Pajaros enojados", 1,"angrybirds"));
+        juegos.add(new Juego("2","Among Us", "quien fue?", 2,"among"));
+        juegos.add(new Juego("3","Dream League", "fifa de celulares", 3,"dreamleague"));
+        juegos.add(new Juego("4","Free Fire", "call de pobres", 1,"freefire"));
+        juegos.add(new Juego("5","Clash Royale", "Pay to win", 5,"clash"));
+
+        binding.rclvFreeToPlay.setHasFixedSize(true);
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(context, RecyclerView.HORIZONTAL, false);
         binding.rclvFreeToPlay.setLayoutManager(layoutManager);
-        //binding.rclvFreeToPlay.setAdapter(new JuegosAdapter(juegos2));
+        binding.rclvFreeToPlay.setAdapter(new JuegosAdapter(juegos));
     }
 
 

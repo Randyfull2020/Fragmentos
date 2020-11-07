@@ -30,20 +30,20 @@ public class MainActivity extends AppCompatActivity implements NavigationHost{
     }
 
     private void configGlobals() {
-      GLOBALS.put("app",this);
+        GLOBALS.put("app",this);
     }
 
     private void configFragmentsManager(Bundle savedInstanceState) {
-     if (savedInstanceState==null){
+        if (savedInstanceState==null){
 
-         getSupportFragmentManager()
-                 .beginTransaction()
-                 .add(R.id.contentPanel,new LoginFragment())
-                 .commit();
-     }
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .add(R.id.contentPanel,new LoginFragment())
+                    .commit();
+        }
     }
     public void nuevoranked(View view){
-       getSupportFragmentManager()
+        getSupportFragmentManager()
                 .beginTransaction()
                 .add(R.id.contentPanel,new TopRanked())
                 .commit();
@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity implements NavigationHost{
                 .add(R.id.contentPanel,new Categorias())
                 .commit();
     }
-//
+    //
     public void nuevotop(View view){
         getSupportFragmentManager()
                 .beginTransaction()

@@ -35,6 +35,6 @@
             android:gravity="center"
             android:layout_marginLeft="8dp"
             android:text="Nombre Categoria"
-            android:textAppearance="?attr/textAppearanceHeadline5" />
+            android:textAppearance="?attr/textAppearanceHeadline4" />
     </RelativeLayout>
 </androidx.cardview.widget.CardView>

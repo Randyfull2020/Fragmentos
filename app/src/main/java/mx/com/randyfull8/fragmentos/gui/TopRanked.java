@@ -65,11 +65,11 @@ public class TopRanked extends Fragment {
         }
     }
     private void configRecycler() {
-        juegos.add(new Juego("1", "naruto", "Naruto Storm 4", 5, "Es la mera vena"));
-        juegos.add(new Juego("2", "forn", "Fortnite", 3, "Le pertenece a nobmaster69"));
-        juegos.add(new Juego("3", "lol", "League of legends", 4, "Pero si ya sacaste 10"));
-        juegos.add(new Juego("4", "re7", "Resident Evil 7", 1, "Si da miedo"));
-        juegos.add(new Juego("5", "gta5", "Gta V", 5, "Mejor que el sana"));
+        juegos.add(new Juego("1", "Naruto Storm 4", "La mera vena", 5, "naruto"));
+        juegos.add(new Juego("2", "Fortnite", "nobmaster 69", 3, "forn"));
+        juegos.add(new Juego("3", "League of legendsl", "Ya sacaste 10", 4, "lol"));
+        juegos.add(new Juego("4", "re7", "Resident Evil 7", 1, "re7"));
+        juegos.add(new Juego("5", "GTA V", "ps3 ps4 ps5", 5, "gta5"));
         binding.rclvTopRanted.setHasFixedSize(true);
         LinearLayoutManager layoutManager = new LinearLayoutManager(context, RecyclerView.HORIZONTAL, false);
         binding.rclvTopRanted.setLayoutManager(layoutManager);

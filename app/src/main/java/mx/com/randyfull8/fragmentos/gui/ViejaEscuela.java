@@ -65,11 +65,11 @@ private List<Juego> juegos = new ArrayList<>();
     }
 
     private void configRecycler() {
-        juegos.add(new Juego("1","mario", "Super Mario Bros", 5,"La infancia de todos"));
-        juegos.add(new Juego("2","kof", "The King Of Fighters", 4,"El peso de las tortillas"));
-        juegos.add(new Juego("3","street", "Street Fighter", 3,"La competencia de KOF"));
-        juegos.add(new Juego("4","pacman", "Pac-Man", 2,"Uno de los primeros hits"));
-        juegos.add(new Juego("5","galaga", "Galaga", 1,"casi casi Star Wars"));
+        juegos.add(new Juego("1","Mario", "Infancia pura", 5,"mario"));
+        juegos.add(new Juego("2","The King Of Fighters", "El peso de tortillas", 4,"kof"));
+        juegos.add(new Juego("3","Street Fighter", "Compentencia del de la izquierda", 3,"street"));
+        juegos.add(new Juego("4","Pac-man", "Clasicoo", 2,"pacman"));
+        juegos.add(new Juego("5","Galaga", "Star Wars Paz", 1,"galaga"));
         binding.rclvViejaEscuela.setHasFixedSize(true);
         LinearLayoutManager layoutManager = new LinearLayoutManager(context, RecyclerView.HORIZONTAL, false);
         binding.rclvViejaEscuela.setLayoutManager(layoutManager);

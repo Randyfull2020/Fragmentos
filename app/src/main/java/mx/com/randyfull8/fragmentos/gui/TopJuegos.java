@@ -36,6 +36,11 @@ public class TopJuegos extends Fragment {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
     }
+    private void configView(LayoutInflater inflater,ViewGroup container) {
+        binding=FragmentTopJuegosBinding.inflate(inflater,container,false);
+        view=binding.getRoot();
+        context=container.getContext();
+    }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
         configGlobals();
@@ -80,7 +85,7 @@ public class TopJuegos extends Fragment {
 
 
 
-       /* FirebaseDatabase database=FirebaseDatabase.getInstance();
+      /* FirebaseDatabase database=FirebaseDatabase.getInstance();
         DatabaseReference reference = database.getReference(PATH_TOP);
         reference.addChildEventListener(new ChildEventListener() {
             @Override
@@ -125,13 +130,8 @@ public class TopJuegos extends Fragment {
 
             }
         });
-
-        */
+*/
 
     }
-    private void configView(LayoutInflater inflater,ViewGroup container) {
-        binding=FragmentTopJuegosBinding.inflate(inflater,container,false);
-        view=binding.getRoot();
-        context=container.getContext();
-    }
+
 }
