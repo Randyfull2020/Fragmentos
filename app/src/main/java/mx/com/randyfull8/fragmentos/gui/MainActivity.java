@@ -1,5 +1,5 @@
 package mx.com.randyfull8.fragmentos.gui;
-
+//r
 import android.os.Bundle;
 import android.view.View;
 
